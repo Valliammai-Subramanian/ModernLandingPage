@@ -1,0 +1,21 @@
+<div>Hello2</div>
+<form (ngSubmit)="processForm()">
+    <div class="field">
+      <input
+        type="text"
+        name="name"
+        class="input"
+        placeholder="Your First Name"
+        [(ngModel)]="firstName"
+        required
+        minlength="3"
+        #firstNameInput="ngModel"
+      />
+  
+      <div *ngIf="firstNameInput.invalid">
+        First Name is required and needs to be at least 3 characters long.
+      </div>
+    </div>
+    
+    <button type="submit">Submit</button>
+  </form>
